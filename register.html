@@ -3,391 +3,1919 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- =========================================================
+     ASHVEIL — TEAM REGISTRATION
+     Theme: Red × Black
+========================================================= -->
+
 <title>ລົງທະບຽນທີມ — ASHVEIL</title>
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Noto+Sans+Lao:wght@400;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
+
+  /* =========================================================
+     1. COLOR VARIABLES
+     ປ່ຽນ Theme ເປັນ ແດງ + ດຳ
+  ========================================================= */
+
   :root{
-    --bg-void:#0a0d16; --bg-panel:#12172a; --bg-panel-2:#171d35;
-    --gold:#d1a860; --gold-bright:#f0cd8a; --violet:#7a6cf0; --teal:#3fa8a0;
-    --ink:#eceef6; --ink-dim:#9aa1bd; --line:rgba(210,190,150,0.16);
-    --danger:#e0667a; --ok:#57c98a;
+    --bg-void:#070708;
+    --bg-black:#0b0b0d;
+
+    --bg-panel:#111114;
+    --bg-panel-2:#17171b;
+
+    /* Red Theme */
+    --red:#b51f2f;
+    --red-bright:#e63245;
+    --red-dark:#7f1420;
+
+    /* Text */
+    --ink:#f2f2f4;
+    --ink-dim:#96969f;
+
+    /* Border */
+    --line:rgba(255,255,255,0.10);
+
+    /* Status */
+    --danger:#ff5969;
+    --ok:#55d98b;
   }
-  *{margin:0;padding:0;box-sizing:border-box;}
+
+
+  /* =========================================================
+     2. RESET
+  ========================================================= */
+
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+
+
+  /* =========================================================
+     3. BODY
+     ພື້ນຫຼັງແບບ Homepage
+  ========================================================= */
+
   body{
+
     background:
-      radial-gradient(ellipse at 15% -10%, rgba(122,108,240,0.16), transparent 45%),
-      radial-gradient(ellipse at 90% 10%, rgba(63,168,160,0.12), transparent 40%),
+
+      /* Red glow ດ້ານເທິງ */
+      radial-gradient(
+        ellipse at 15% -10%,
+        rgba(230,50,69,0.18),
+        transparent 45%
+      ),
+
+      /* Red glow ດ້ານຂວາ */
+      radial-gradient(
+        ellipse at 90% 10%,
+        rgba(181,31,47,0.12),
+        transparent 40%
+      ),
+
       var(--bg-void);
-    color:var(--ink); font-family:'Manrope','Noto Sans Lao',sans-serif; min-height:100vh;
+
+    color:var(--ink);
+
+    font-family:
+      'Manrope',
+      'Noto Sans Lao',
+      sans-serif;
+
+    min-height:100vh;
+
     -webkit-font-smoothing:antialiased;
   }
-  h1,h2,.display{ font-family:'Cinzel','Noto Sans Lao',serif; letter-spacing:0.02em; }
-  a{ color:inherit; text-decoration:none; }
+
+
+  /* Heading Font */
+
+  h1,
+  h2,
+  .display{
+
+    font-family:
+      'Cinzel',
+      'Noto Sans Lao',
+      serif;
+
+    letter-spacing:0.02em;
+  }
+
+
+  a{
+    color:inherit;
+    text-decoration:none;
+  }
+
+
+  /* =========================================================
+     4. TOP NAVBAR
+  ========================================================= */
 
   .topbar{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:18px 40px; border-bottom:1px solid var(--line);
-    background: linear-gradient(180deg, rgba(10,13,22,.95), rgba(10,13,22,.7));
-    position:sticky; top:0; z-index:20; backdrop-filter:blur(8px);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    padding:18px 40px;
+
+    border-bottom:
+      1px solid var(--line);
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(7,7,8,.97),
+        rgba(7,7,8,.80)
+      );
+
+    position:sticky;
+    top:0;
+
+    z-index:20;
+
+    backdrop-filter:blur(10px);
   }
-  .brand{ display:flex; align-items:center; gap:12px; }
-  .brand-mark svg{ width:34px; height:34px; }
-  .brand-text{ font-family:'Cinzel',serif; font-weight:800; font-size:18px; color:var(--gold-bright); letter-spacing:0.1em; }
-  .back-link{ font-size:13px; color:var(--ink-dim); font-weight:700; }
-  .back-link:hover{ color:var(--gold-bright); }
 
-  .wrap{ max-width: 760px; margin: 0 auto; padding: 48px 24px 100px; }
-  .page-head{ text-align:center; margin-bottom:36px; }
-  .eyebrow{ font-size:12px; letter-spacing:0.3em; color:var(--ink-dim); text-transform:uppercase; margin-bottom:10px; }
-  .page-title{ font-size:clamp(28px,4vw,40px); font-weight:900; color:var(--gold-bright); }
-  .page-sub{ color:var(--ink-dim); font-size:14px; margin-top:10px; }
 
-  form{ display:flex; flex-direction:column; gap:28px; }
+  /* ASHVEIL Brand */
+
+  .brand{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+  }
+
+
+  .brand-mark svg{
+
+    width:34px;
+    height:34px;
+  }
+
+
+  .brand-text{
+
+    font-family:'Cinzel',serif;
+
+    font-weight:900;
+
+    font-size:18px;
+
+    color:var(--red-bright);
+
+    letter-spacing:0.12em;
+
+    text-shadow:
+      0 0 18px rgba(230,50,69,.25);
+  }
+
+
+  /* Back button */
+
+  .back-link{
+
+    font-size:13px;
+
+    color:var(--ink-dim);
+
+    font-weight:700;
+
+    transition:
+      color .2s,
+      transform .2s;
+  }
+
+
+  .back-link:hover{
+
+    color:var(--red-bright);
+
+    transform:translateX(-2px);
+  }
+
+
+  /* =========================================================
+     5. MAIN CONTAINER
+  ========================================================= */
+
+  .wrap{
+
+    max-width:760px;
+
+    margin:0 auto;
+
+    padding:
+      48px 24px 100px;
+  }
+
+
+  /* =========================================================
+     6. PAGE HEADER
+  ========================================================= */
+
+  .page-head{
+
+    text-align:center;
+
+    margin-bottom:36px;
+  }
+
+
+  .eyebrow{
+
+    font-size:12px;
+
+    letter-spacing:0.3em;
+
+    color:var(--red-bright);
+
+    text-transform:uppercase;
+
+    margin-bottom:10px;
+
+    font-weight:800;
+  }
+
+
+  .page-title{
+
+    font-size:
+      clamp(28px,4vw,40px);
+
+    font-weight:900;
+
+    color:#fff;
+
+    text-shadow:
+      0 0 25px rgba(230,50,69,.18);
+  }
+
+
+  .page-sub{
+
+    color:var(--ink-dim);
+
+    font-size:14px;
+
+    margin-top:10px;
+
+    line-height:1.7;
+  }
+
+
+  /* =========================================================
+     7. FORM
+  ========================================================= */
+
+  form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+  }
+
+
+  /* =========================================================
+     8. CARD
+  ========================================================= */
 
   .card{
-    background:var(--bg-panel); border:1px solid var(--line); border-radius:8px; padding:26px;
-  }
-  .card-title{ font-family:'Cinzel',serif; font-weight:700; font-size:15px; color:var(--ink); letter-spacing:0.06em; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
-  .card-title .num{ width:22px; height:22px; border-radius:50%; background:linear-gradient(135deg,var(--gold),#a9814a); color:#14101a; font-size:12px; font-weight:800; display:grid; place-items:center; font-family:'Manrope',sans-serif; }
 
-  .field{ margin-bottom:16px; }
-  .field:last-child{ margin-bottom:0; }
-  label{ display:block; font-size:12.5px; color:var(--ink-dim); margin-bottom:7px; font-weight:600; }
-  label .req{ color:var(--danger); margin-left:2px; }
-  input[type=text], input[type=tel], select, textarea{
-    width:100%; background:#0d1122; border:1px solid var(--line); border-radius:5px;
-    padding:11px 13px; color:var(--ink); font-size:14px; font-family:inherit;
-    transition:border-color .2s;
-  }
-  input::placeholder, textarea::placeholder{ color:#5c6483; }
-  input:focus, select:focus, textarea:focus{ outline:none; border-color:var(--gold); }
-  textarea{ resize:vertical; min-height:56px; }
-  select{ cursor:pointer; }
+    background:
 
-  .logo-row{ display:flex; align-items:center; gap:18px; }
-  .logo-drop{
-    width:88px; height:88px; border-radius:8px; border:1.5px dashed var(--line);
-    display:grid; place-items:center; cursor:pointer; flex-shrink:0; overflow:hidden;
-    background:#0d1122; transition:border-color .2s;
+      linear-gradient(
+        145deg,
+        rgba(255,255,255,.025),
+        rgba(255,255,255,.005)
+      ),
+
+      var(--bg-panel);
+
+    border:
+      1px solid var(--line);
+
+    border-radius:8px;
+
+    padding:26px;
+
+    box-shadow:
+      0 15px 50px rgba(0,0,0,.25);
+
     position:relative;
-  }
-  .logo-drop:hover{ border-color:var(--gold); }
-  .logo-drop img{ width:100%; height:100%; object-fit:cover; }
-  .logo-drop .plus{ font-size:26px; color:var(--ink-dim); }
-  .logo-hint{ font-size:12px; color:var(--ink-dim); line-height:1.6; }
 
-  .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
-  @media (max-width:560px){ .grid2{ grid-template-columns:1fr; } }
+    overflow:hidden;
+  }
+
+
+  /* Red line ຢູ່ເທິງ card */
+
+  .card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:2px;
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        var(--red),
+        transparent
+      );
+
+    opacity:.65;
+  }
+
+
+  /* Card title */
+
+  .card-title{
+
+    font-family:'Cinzel',serif;
+
+    font-weight:700;
+
+    font-size:15px;
+
+    color:var(--ink);
+
+    letter-spacing:0.06em;
+
+    margin-bottom:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+  }
+
+
+  /* Number circle */
+
+  .card-title .num{
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    background:
+      linear-gradient(
+        135deg,
+        var(--red-bright),
+        var(--red-dark)
+      );
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    display:grid;
+
+    place-items:center;
+
+    font-family:'Manrope',sans-serif;
+
+    box-shadow:
+      0 0 12px rgba(230,50,69,.25);
+  }
+
+
+  /* =========================================================
+     9. INPUT FIELDS
+  ========================================================= */
+
+  .field{
+
+    margin-bottom:16px;
+  }
+
+
+  .field:last-child{
+
+    margin-bottom:0;
+  }
+
+
+  label{
+
+    display:block;
+
+    font-size:12.5px;
+
+    color:var(--ink-dim);
+
+    margin-bottom:7px;
+
+    font-weight:600;
+  }
+
+
+  label .req{
+
+    color:var(--red-bright);
+
+    margin-left:2px;
+  }
+
+
+  input[type=text],
+  input[type=tel],
+  select,
+  textarea{
+
+    width:100%;
+
+    background:#0a0a0c;
+
+    border:
+      1px solid var(--line);
+
+    border-radius:5px;
+
+    padding:11px 13px;
+
+    color:var(--ink);
+
+    font-size:14px;
+
+    font-family:inherit;
+
+    transition:
+      border-color .2s,
+      box-shadow .2s,
+      background .2s;
+  }
+
+
+  input::placeholder,
+  textarea::placeholder{
+
+    color:#55555f;
+  }
+
+
+  /* Focus = Red */
+
+  input:focus,
+  select:focus,
+  textarea:focus{
+
+    outline:none;
+
+    border-color:var(--red);
+
+    background:#0d0d10;
+
+    box-shadow:
+      0 0 0 2px rgba(230,50,69,.08);
+  }
+
+
+  textarea{
+
+    resize:vertical;
+
+    min-height:56px;
+  }
+
+
+  select{
+
+    cursor:pointer;
+  }
+
+
+  /* =========================================================
+     10. TEAM LOGO
+  ========================================================= */
+
+  .logo-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+  }
+
+
+  .logo-drop{
+
+    width:88px;
+    height:88px;
+
+    border-radius:8px;
+
+    border:
+      1.5px dashed rgba(230,50,69,.35);
+
+    display:grid;
+
+    place-items:center;
+
+    cursor:pointer;
+
+    flex-shrink:0;
+
+    overflow:hidden;
+
+    background:#0a0a0c;
+
+    transition:
+      border-color .2s,
+      box-shadow .2s;
+  }
+
+
+  .logo-drop:hover{
+
+    border-color:var(--red-bright);
+
+    box-shadow:
+      0 0 20px rgba(230,50,69,.12);
+  }
+
+
+  .logo-drop img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+  }
+
+
+  .logo-drop .plus{
+
+    font-size:26px;
+
+    color:var(--ink-dim);
+  }
+
+
+  .logo-hint{
+
+    font-size:12px;
+
+    color:var(--ink-dim);
+
+    line-height:1.6;
+  }
+
+
+  /* =========================================================
+     11. TWO COLUMN GRID
+  ========================================================= */
+
+  .grid2{
+
+    display:grid;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap:16px;
+  }
+
+
+  @media(max-width:560px){
+
+    .grid2{
+
+      grid-template-columns:1fr;
+    }
+
+  }
+
+
+  /* =========================================================
+     12. MEMBER CARD
+  ========================================================= */
 
   .member-card{
-    border:1px solid var(--line); border-radius:6px; padding:18px; background:var(--bg-panel-2);
-    margin-bottom:14px; position:relative;
+
+    border:
+      1px solid var(--line);
+
+    border-radius:6px;
+
+    padding:18px;
+
+    background:
+
+      linear-gradient(
+        145deg,
+        rgba(255,255,255,.025),
+        transparent
+      ),
+
+      var(--bg-panel-2);
+
+    margin-bottom:14px;
+
+    position:relative;
+
+    transition:
+      border-color .2s,
+      transform .2s;
   }
-  .member-card:last-child{ margin-bottom:0; }
-  .member-head{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+
+
+  .member-card:hover{
+
+    border-color:
+      rgba(230,50,69,.35);
+
+    transform:
+      translateY(-1px);
+  }
+
+
+  .member-card:last-child{
+
+    margin-bottom:0;
+  }
+
+
+  .member-head{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:14px;
+  }
+
+
+  /* Member number */
+
   .member-badge{
-    width:26px; height:26px; border-radius:50%; background:rgba(122,108,240,0.18);
-    border:1px solid rgba(122,108,240,0.5); color:var(--violet); font-size:12px; font-weight:800;
-    display:grid; place-items:center; font-family:'Cinzel',serif;
+
+    width:26px;
+    height:26px;
+
+    border-radius:50%;
+
+    background:
+      rgba(230,50,69,.12);
+
+    border:
+      1px solid rgba(230,50,69,.45);
+
+    color:var(--red-bright);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    display:grid;
+
+    place-items:center;
+
+    font-family:'Cinzel',serif;
   }
-  .member-title{ font-size:13.5px; font-weight:700; color:var(--ink); }
-  .member-tag{ margin-left:auto; font-size:10.5px; color:var(--gold-bright); border:1px solid rgba(210,168,96,.4); padding:2px 8px; border-radius:10px; }
 
-  .count-select{ max-width:220px; }
 
-  .submit-row{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  .member-title{
+
+    font-size:13.5px;
+
+    font-weight:700;
+
+    color:var(--ink);
+  }
+
+
+  /* Sub / Coach label */
+
+  .member-tag{
+
+    margin-left:auto;
+
+    font-size:10.5px;
+
+    color:var(--red-bright);
+
+    border:
+      1px solid rgba(230,50,69,.35);
+
+    background:
+      rgba(230,50,69,.06);
+
+    padding:
+      2px 8px;
+
+    border-radius:10px;
+  }
+
+
+  .count-select{
+
+    max-width:220px;
+  }
+
+
+  /* =========================================================
+     13. SUBMIT AREA
+  ========================================================= */
+
+  .submit-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+  }
+
+
+  /* Submit Button */
+
   .btn-submit{
-    padding:14px 36px; background:linear-gradient(135deg,var(--gold),#a9814a); color:#14101a;
-    font-weight:800; font-size:14px; letter-spacing:0.06em; border:none; border-radius:4px;
-    cursor:pointer; transition:filter .2s, transform .2s;
+
+    padding:
+      14px 36px;
+
+    background:
+      linear-gradient(
+        135deg,
+        var(--red-bright),
+        var(--red-dark)
+      );
+
+    color:#fff;
+
+    font-weight:800;
+
+    font-size:14px;
+
+    letter-spacing:0.06em;
+
+    border:none;
+
+    border-radius:4px;
+
+    cursor:pointer;
+
+    transition:
+      filter .2s,
+      transform .2s,
+      box-shadow .2s;
+
+    box-shadow:
+      0 8px 25px rgba(181,31,47,.20);
   }
-  .btn-submit:hover{ filter:brightness(1.08); transform:translateY(-1px); }
-  .btn-submit:disabled{ opacity:0.5; cursor:not-allowed; transform:none; }
-  .status-msg{ font-size:13px; font-weight:600; }
-  .status-msg.ok{ color:var(--ok); }
-  .status-msg.err{ color:var(--danger); }
+
+
+  .btn-submit:hover{
+
+    filter:brightness(1.1);
+
+    transform:
+      translateY(-2px);
+
+    box-shadow:
+      0 10px 30px rgba(181,31,47,.30);
+  }
+
+
+  .btn-submit:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+    transform:none;
+  }
+
+
+  /* Status Message */
+
+  .status-msg{
+
+    font-size:13px;
+
+    font-weight:600;
+  }
+
+
+  .status-msg.ok{
+
+    color:var(--ok);
+  }
+
+
+  .status-msg.err{
+
+    color:var(--danger);
+  }
+
+
+  /* =========================================================
+     14. GOOGLE SCRIPT WARNING
+  ========================================================= */
 
   .config-warning{
-    border:1px solid rgba(224,102,122,0.4); background:rgba(224,102,122,0.08);
-    color:#f3b3bf; font-size:12.5px; padding:12px 16px; border-radius:6px; margin-bottom:24px; line-height:1.6;
+
+    border:
+      1px solid rgba(230,50,69,.35);
+
+    background:
+      rgba(230,50,69,.06);
+
+    color:#f2aab2;
+
+    font-size:12.5px;
+
+    padding:12px 16px;
+
+    border-radius:6px;
+
+    margin-bottom:24px;
+
+    line-height:1.6;
   }
-  .config-warning code{ background:rgba(0,0,0,0.3); padding:1px 6px; border-radius:3px; }
+
+
+  .config-warning code{
+
+    background:
+      rgba(0,0,0,.45);
+
+    color:#ff7b89;
+
+    padding:
+      1px 6px;
+
+    border-radius:3px;
+  }
+
+
+  /* =========================================================
+     15. SUCCESS PANEL
+  ========================================================= */
 
   .success-panel{
-    text-align:center; padding:60px 20px; display:none;
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    display:none;
   }
-  .success-panel.show{ display:block; }
-  .success-icon{ font-size:48px; margin-bottom:16px; }
-  .success-title{ font-family:'Cinzel',serif; font-size:22px; color:var(--gold-bright); font-weight:700; margin-bottom:10px; }
-  .success-sub{ color:var(--ink-dim); font-size:14px; }
+
+
+  .success-panel.show{
+
+    display:block;
+  }
+
+
+  .success-icon{
+
+    font-size:48px;
+
+    margin-bottom:16px;
+  }
+
+
+  .success-title{
+
+    font-family:'Cinzel',serif;
+
+    font-size:22px;
+
+    color:var(--red-bright);
+
+    font-weight:700;
+
+    margin-bottom:10px;
+  }
+
+
+  .success-sub{
+
+    color:var(--ink-dim);
+
+    font-size:14px;
+
+    line-height:1.7;
+  }
+
+
 </style>
 </head>
+
+
 <body>
 
-  <div class="topbar">
-    <div class="brand">
-      <div class="brand-mark">
-        <svg viewBox="0 0 48 48" fill="none"><path d="M24 3 L41 13 V33 L24 45 L7 33 V13 Z" stroke="#d1a860" stroke-width="1.6"/><circle cx="24" cy="24" r="6" fill="#7a6cf0" opacity="0.85"/></svg>
-      </div>
-      <div class="brand-text">ASHVEIL</div>
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="topbar">
+
+  <div class="brand">
+
+    <!-- ASHVEIL Logo -->
+    <div class="brand-mark">
+
+      <svg viewBox="0 0 48 48" fill="none">
+
+        <!-- Outer Hexagon -->
+        <path
+          d="M24 3 L41 13 V33 L24 45 L7 33 V13 Z"
+          stroke="#e63245"
+          stroke-width="1.6"
+        />
+
+        <!-- Center -->
+        <circle
+          cx="24"
+          cy="24"
+          r="6"
+          fill="#b51f2f"
+        />
+
+      </svg>
+
     </div>
-    <a class="back-link" href="ashveil-homepage.html">‹ ກັບໜ້າຫຼັກ</a>
+
+    <div class="brand-text">
+      ASHVEIL
+    </div>
+
   </div>
 
-  <div class="wrap">
 
-    <div id="formPanel">
-      <div class="page-head">
-        <div class="eyebrow">TOURNAMENT REGISTRATION</div>
-        <h1 class="page-title">ລົງທະບຽນທີມແຂ່ງຂັນ</h1>
-        <p class="page-sub">ຕື່ມຂໍ້ມູນທີມ ແລະ ສະມາຊິກໃຫ້ຄົບຖ້ວນ ຈາກນັ້ນກົດສົ່ງ — ຂໍ້ມູນຈະຖືກບັນທຶກເຂົ້າ Google Sheet ໂດຍອັດຕະໂນມັດ</p>
+  <!-- Back Homepage -->
+  <a
+    class="back-link"
+    href="ashveil-homepage.html"
+  >
+    ‹ ກັບໜ້າຫຼັກ
+  </a>
+
+</div>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<div class="wrap">
+
+
+  <!-- =======================================================
+       REGISTRATION FORM
+  ======================================================= -->
+
+  <div id="formPanel">
+
+
+    <!-- Page Header -->
+
+    <div class="page-head">
+
+      <div class="eyebrow">
+        TOURNAMENT REGISTRATION
       </div>
 
-      <div class="config-warning" id="configWarning">
-        ⚠️ ຍັງບໍ່ໄດ້ຕັ້ງຄ່າປາຍທາງ Google Sheet — ແກ້ຄ່າ <code>SCRIPT_URL</code> ໃນ code (ໃກ້ທ້າຍໄຟລ໌) ດ້ວຍລິ້ງ Web App ຈາກ Google Apps Script ຂອງທ່ານ. ເບິ່ງຄຳແນະນຳໃນ <code>apps-script-setup.md</code> ທີ່ໃຫ້ມາພ້ອມ.
-      </div>
+      <h1 class="page-title">
+        ລົງທະບຽນທີມແຂ່ງຂັນ
+      </h1>
 
-      <form id="regForm">
+      <p class="page-sub">
+        ຕື່ມຂໍ້ມູນທີມ ແລະ ສະມາຊິກໃຫ້ຄົບຖ້ວນ
+        ຈາກນັ້ນກົດສົ່ງ —
+        ຂໍ້ມູນຈະຖືກບັນທຶກເຂົ້າ Google Sheet ໂດຍອັດຕະໂນມັດ
+      </p>
 
-        <div class="card">
-          <div class="card-title"><span class="num">1</span> ຂໍ້ມູນທີມ</div>
+    </div>
+
+
+
+    <!-- =====================================================
+         GOOGLE SCRIPT WARNING
+    ====================================================== -->
+
+    <div
+      class="config-warning"
+      id="configWarning"
+    >
+
+      ⚠️ ຍັງບໍ່ໄດ້ຕັ້ງຄ່າປາຍທາງ Google Sheet —
+
+      ແກ້ຄ່າ
+      <code>SCRIPT_URL</code>
+
+      ໃນ code ໃກ້ທ້າຍໄຟລ໌.
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FORM
+    ====================================================== -->
+
+    <form id="regForm">
+
+
+      <!-- ===================================================
+           CARD 1 — TEAM INFORMATION
+      ==================================================== -->
+
+      <div class="card">
+
+        <div class="card-title">
+
+          <span class="num">
+            1
+          </span>
+
+          ຂໍ້ມູນທີມ
+
+        </div>
+
+
+        <!-- Team Logo -->
+
+        <div class="field">
+
+          <label>
+            ໂລໂກ້ທີມ
+            <span class="req">*</span>
+          </label>
+
+          <div class="logo-row">
+
+            <div
+              class="logo-drop"
+              id="logoDrop"
+            >
+
+              <span
+                class="plus"
+                id="logoPlus"
+              >
+                +
+              </span>
+
+              <img
+                id="logoPreview"
+                style="display:none"
+              >
+
+            </div>
+
+
+            <div class="logo-hint">
+
+              ຮູບ JPG/PNG, ບໍ່ເກີນ 2MB
+              <br>
+
+              ແນະນຳຂະໜາດຮູບ 1:1
+
+            </div>
+
+
+            <input
+              type="file"
+              id="logoInput"
+              accept="image/*"
+              style="display:none"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- Team Name + Member Count -->
+
+        <div class="grid2">
+
 
           <div class="field">
-            <label>ໂລໂກ້ທີມ <span class="req">*</span></label>
-            <div class="logo-row">
-              <div class="logo-drop" id="logoDrop">
-                <span class="plus" id="logoPlus">+</span>
-                <img id="logoPreview" style="display:none">
-              </div>
-              <div class="logo-hint">ຮູບ JPG/PNG, ບໍ່ເກີນ 2MB<br>ແນະນຳຂະໜາດຮູບ 1:1 (ສີ່ຫຼ່ຽມ)</div>
-              <input type="file" id="logoInput" accept="image/*" style="display:none">
-            </div>
+
+            <label>
+              ຊື່ທີມ
+              <span class="req">*</span>
+            </label>
+
+            <input
+              type="text"
+              id="teamName"
+              placeholder="ຕົວຢ່າງ: Storm Riders"
+              required
+            >
+
           </div>
 
-          <div class="grid2">
-            <div class="field">
-              <label>ຊື່ທີມ <span class="req">*</span></label>
-              <input type="text" id="teamName" placeholder="ຕົວຢ່າງ: Storm Riders" required>
-            </div>
-            <div class="field">
-              <label>ຈຳນວນສະມາຊິກ <span class="req">*</span></label>
-              <select id="memberCount" class="count-select">
-                <option value="5">5 ຄົນ</option>
-                <option value="6">6 ຄົນ</option>
-                <option value="7" selected>7 ຄົນ</option>
-              </select>
-            </div>
+
+          <div class="field">
+
+            <label>
+              ຈຳນວນສະມາຊິກ
+              <span class="req">*</span>
+            </label>
+
+            <select
+              id="memberCount"
+              class="count-select"
+            >
+
+              <option value="5">
+                5 ຄົນ
+              </option>
+
+              <option value="6">
+                6 ຄົນ
+              </option>
+
+              <option value="7" selected>
+                7 ຄົນ
+              </option>
+
+            </select>
+
           </div>
+
         </div>
 
-        <div class="card">
-          <div class="card-title"><span class="num">2</span> ຂໍ້ມູນສະມາຊິກ</div>
-          <div id="membersWrap"></div>
+      </div>
+
+
+
+      <!-- ===================================================
+           CARD 2 — MEMBERS
+      ==================================================== -->
+
+      <div class="card">
+
+        <div class="card-title">
+
+          <span class="num">
+            2
+          </span>
+
+          ຂໍ້ມູນສະມາຊິກ
+
         </div>
 
-        <div class="card">
-          <div class="submit-row">
-            <button type="submit" class="btn-submit" id="submitBtn">ສົ່ງລົງທະບຽນ</button>
-            <span class="status-msg" id="statusMsg"></span>
-          </div>
+
+        <!-- Members will be generated by JavaScript -->
+
+        <div id="membersWrap"></div>
+
+      </div>
+
+
+
+      <!-- ===================================================
+           CARD 3 — SUBMIT
+      ==================================================== -->
+
+      <div class="card">
+
+        <div class="submit-row">
+
+          <button
+            type="submit"
+            class="btn-submit"
+            id="submitBtn"
+          >
+            ສົ່ງລົງທະບຽນ
+          </button>
+
+
+          <span
+            class="status-msg"
+            id="statusMsg"
+          ></span>
+
         </div>
 
-      </form>
-    </div>
+      </div>
 
-    <div class="success-panel" id="successPanel">
-      <div class="success-icon">✅</div>
-      <div class="success-title">ລົງທະບຽນສຳເລັດແລ້ວ!</div>
-      <p class="success-sub">ຂໍ້ມູນທີມຂອງທ່ານຖືກສົ່ງເຂົ້າລະບົບແລ້ວ. ພະນັກງານຈະຕິດຕໍ່ກັບຢືນຢັນພາຍໃນ 24 ຊົ່ວໂມງ.</p>
-      <br>
-      <a class="back-link" href="ashveil-homepage.html">‹ ກັບໜ້າຫຼັກ</a>
-    </div>
+
+    </form>
 
   </div>
+
+
+
+  <!-- =======================================================
+       SUCCESS MESSAGE
+  ======================================================= -->
+
+  <div
+    class="success-panel"
+    id="successPanel"
+  >
+
+    <div class="success-icon">
+      ✅
+    </div>
+
+    <div class="success-title">
+      ລົງທະບຽນສຳເລັດແລ້ວ!
+    </div>
+
+    <p class="success-sub">
+
+      ຂໍ້ມູນທີມຂອງທ່ານຖືກສົ່ງເຂົ້າລະບົບແລ້ວ.
+
+      <br>
+
+      ພະນັກງານຈະຕິດຕໍ່ກັບຢືນຢັນ
+      ພາຍໃນ 24 ຊົ່ວໂມງ.
+
+    </p>
+
+    <br>
+
+    <a
+      class="back-link"
+      href="ashveil-homepage.html"
+    >
+      ‹ ກັບໜ້າຫຼັກ
+    </a>
+
+  </div>
+
+</div>
+
+
 
 <script>
-  /* =====================================================================
-     ຕັ້ງຄ່າຈຸດນີ້: ວາງລິ້ງ "Web app URL" ຈາກ Google Apps Script ຂອງທ່ານ
-     ວິທີສ້າງ ເບິ່ງໄດ້ໃນໄຟລ໌ apps-script-setup.md
-  ===================================================================== */
-  const SCRIPT_URL = ""; // <-- ວາງລິ້ງ Apps Script Web App ຢູ່ນີ້ ເຊັ່ນ: "https://script.google.com/macros/s/XXXX/exec"
+
+  /* =========================================================
+     GOOGLE APPS SCRIPT URL
+
+     ນຳ Web App URL ຈາກ Google Apps Script
+     ມາໃສ່ບ່ອນນີ້
+
+     ຕົວຢ່າງ:
+     https://script.google.com/macros/s/XXXX/exec
+  ========================================================= */
+
+  const SCRIPT_URL = "";
+
+
+  /* =========================================================
+     PLAYER POSITIONS
+  ========================================================= */
 
   const POSITIONS = [
-    { value:"exp",    label:"Exp Laner" },
-    { value:"jungle", label:"Jungler" },
-    { value:"mid",    label:"Mid Laner" },
-    { value:"gold",   label:"Gold Laner" },
-    { value:"roam",   label:"Roamer" },
-    { value:"sub",    label:"Substitute" },
-    { value:"coach",  label:"Coach / Manager" },
+
+    {
+      value:"exp",
+      label:"Exp Laner"
+    },
+
+    {
+      value:"jungle",
+      label:"Jungler"
+    },
+
+    {
+      value:"mid",
+      label:"Mid Laner"
+    },
+
+    {
+      value:"gold",
+      label:"Gold Laner"
+    },
+
+    {
+      value:"roam",
+      label:"Roamer"
+    },
+
+    {
+      value:"sub",
+      label:"Substitute"
+    },
+
+    {
+      value:"coach",
+      label:"Coach / Manager"
+    }
+
   ];
 
-  const membersWrap = document.getElementById('membersWrap');
-  const memberCountSelect = document.getElementById('memberCount');
+
+  /* =========================================================
+     DOM ELEMENTS
+  ========================================================= */
+
+  const membersWrap =
+    document.getElementById('membersWrap');
+
+  const memberCountSelect =
+    document.getElementById('memberCount');
+
+
+  /* =========================================================
+     CREATE POSITION OPTIONS
+  ========================================================= */
 
   function positionOptions(selected){
-    return POSITIONS.map(p => `<option value="${p.value}" ${p.value===selected?'selected':''}>${p.label}</option>`).join('');
+
+    return POSITIONS.map(p => `
+
+      <option
+        value="${p.value}"
+        ${p.value === selected ? 'selected' : ''}
+      >
+
+        ${p.label}
+
+      </option>
+
+    `).join('');
+
   }
+
+
+  /* =========================================================
+     RENDER MEMBERS
+     ສ້າງ Form ສະມາຊິກຕາມຈຳນວນທີ່ເລືອກ
+  ========================================================= */
 
   function renderMembers(){
-    const n = parseInt(memberCountSelect.value, 10);
-    const existing = Array.from(membersWrap.querySelectorAll('.member-card')).map(card => ({
-      name: card.querySelector('.m-name').value,
-      phone: card.querySelector('.m-phone').value,
-      position: card.querySelector('.m-position').value,
-      details: card.querySelector('.m-details').value,
-    }));
+
+    const n =
+      parseInt(
+        memberCountSelect.value,
+        10
+      );
+
+
+    /* ເກັບຂໍ້ມູນເກົ່າ */
+
+    const existing =
+      Array.from(
+        membersWrap.querySelectorAll('.member-card')
+      ).map(card => ({
+
+        name:
+          card.querySelector('.m-name').value,
+
+        phone:
+          card.querySelector('.m-phone').value,
+
+        position:
+          card.querySelector('.m-position').value,
+
+        details:
+          card.querySelector('.m-details').value
+
+      }));
+
+
+    /* Clear */
 
     membersWrap.innerHTML = '';
-    for(let i=0; i<n; i++){
-      const prev = existing[i] || { name:'', phone:'', position: i===0?'exp':(i===1?'jungle':(i===2?'mid':(i===3?'gold':(i===4?'roam':'sub')))), details:'' };
-      const isSub = i >= 5;
-      const card = document.createElement('div');
-      card.className = 'member-card';
+
+
+    /* Generate */
+
+    for(let i = 0; i < n; i++){
+
+      const prev =
+        existing[i] || {
+
+          name:'',
+          phone:'',
+
+          position:
+            i === 0 ? 'exp' :
+            i === 1 ? 'jungle' :
+            i === 2 ? 'mid' :
+            i === 3 ? 'gold' :
+            i === 4 ? 'roam' :
+            'sub',
+
+          details:''
+
+        };
+
+
+      /* Member 6+ = Substitute / Coach */
+
+      const isSub =
+        i >= 5;
+
+
+      const card =
+        document.createElement('div');
+
+
+      card.className =
+        'member-card';
+
+
       card.innerHTML = `
+
         <div class="member-head">
-          <div class="member-badge">${i+1}</div>
-          <div class="member-title">ສະມາຊິກຄົນທີ ${i+1}</div>
-          ${isSub ? '<div class="member-tag">Sub/Coach</div>' : ''}
+
+          <div class="member-badge">
+            ${i + 1}
+          </div>
+
+          <div class="member-title">
+            ສະມາຊິກຄົນທີ ${i + 1}
+          </div>
+
+          ${
+            isSub
+              ? '<div class="member-tag">Sub/Coach</div>'
+              : ''
+          }
+
         </div>
+
+
         <div class="grid2">
+
           <div class="field">
-            <label>ຊື່ ແລະ ນາມສະກຸນ <span class="req">*</span></label>
-            <input type="text" class="m-name" placeholder="ຊື່ ນາມສະກຸນ" value="${prev.name}" required>
+
+            <label>
+              ຊື່ ແລະ ນາມສະກຸນ
+              <span class="req">*</span>
+            </label>
+
+            <input
+              type="text"
+              class="m-name"
+              placeholder="ຊື່ ນາມສະກຸນ"
+              value="${prev.name}"
+              required
+            >
+
           </div>
+
+
           <div class="field">
-            <label>ເບີໂທ / ຕິດຕໍ່ <span class="req">*</span></label>
-            <input type="tel" class="m-phone" placeholder="020 xxxxxxxx" value="${prev.phone}" required>
+
+            <label>
+              ເບີໂທ / ຕິດຕໍ່
+              <span class="req">*</span>
+            </label>
+
+            <input
+              type="tel"
+              class="m-phone"
+              placeholder="020 xxxxxxxx"
+              value="${prev.phone}"
+              required
+            >
+
           </div>
+
         </div>
+
+
         <div class="grid2">
+
           <div class="field">
-            <label>ຕຳແໜ່ງ <span class="req">*</span></label>
-            <select class="m-position">${positionOptions(prev.position)}</select>
+
+            <label>
+              ຕຳແໜ່ງ
+              <span class="req">*</span>
+            </label>
+
+            <select class="m-position">
+
+              ${positionOptions(prev.position)}
+
+            </select>
+
           </div>
+
+
           <div class="field">
-            <label>ລາຍລະອຽດເພີ່ມເຕີມ</label>
-            <input type="text" class="m-details" placeholder="ເຊັ່ນ: ID ໃນເກມ, hero ຖະໜັດ..." value="${prev.details}">
+
+            <label>
+              ລາຍລະອຽດເພີ່ມເຕີມ
+            </label>
+
+            <input
+              type="text"
+              class="m-details"
+              placeholder="ເຊັ່ນ: ID ໃນເກມ, Hero ຖະໜັດ..."
+              value="${prev.details}"
+            >
+
           </div>
+
         </div>
+
       `;
+
+
       membersWrap.appendChild(card);
+
     }
+
   }
 
-  memberCountSelect.addEventListener('change', renderMembers);
+
+  /* =========================================================
+     MEMBER COUNT CHANGE
+  ========================================================= */
+
+  memberCountSelect.addEventListener(
+    'change',
+    renderMembers
+  );
+
+
+  /* Initial render */
+
   renderMembers();
 
-  /* ---------- Logo upload & preview ---------- */
-  const logoDrop = document.getElementById('logoDrop');
-  const logoInput = document.getElementById('logoInput');
-  const logoPreview = document.getElementById('logoPreview');
-  const logoPlus = document.getElementById('logoPlus');
+
+
+  /* =========================================================
+     LOGO UPLOAD
+  ========================================================= */
+
+  const logoDrop =
+    document.getElementById('logoDrop');
+
+  const logoInput =
+    document.getElementById('logoInput');
+
+  const logoPreview =
+    document.getElementById('logoPreview');
+
+  const logoPlus =
+    document.getElementById('logoPlus');
+
+
   let logoBase64 = "";
   let logoMime = "";
 
-  logoDrop.addEventListener('click', () => logoInput.click());
-  logoInput.addEventListener('change', () => {
-    const file = logoInput.files[0];
-    if(!file) return;
-    if(file.size > 2 * 1024 * 1024){
-      alert('ຮູບໃຫຍ່ເກີນ 2MB, ກະລຸນາເລືອກຮູບໃໝ່');
-      logoInput.value = '';
-      return;
-    }
-    logoMime = file.type;
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      logoBase64 = e.target.result;
-      logoPreview.src = logoBase64;
-      logoPreview.style.display = 'block';
-      logoPlus.style.display = 'none';
-    };
-    reader.readAsDataURL(file);
-  });
 
-  /* ---------- Config warning toggle ---------- */
+  /* Click logo box */
+
+  logoDrop.addEventListener(
+    'click',
+    () => logoInput.click()
+  );
+
+
+  /* File selected */
+
+  logoInput.addEventListener(
+    'change',
+    () => {
+
+      const file =
+        logoInput.files[0];
+
+
+      if(!file) return;
+
+
+      /* Maximum 2MB */
+
+      if(
+        file.size >
+        2 * 1024 * 1024
+      ){
+
+        alert(
+          'ຮູບໃຫຍ່ເກີນ 2MB, ກະລຸນາເລືອກຮູບໃໝ່'
+        );
+
+        logoInput.value = '';
+
+        return;
+
+      }
+
+
+      logoMime =
+        file.type;
+
+
+      /* Read image */
+
+      const reader =
+        new FileReader();
+
+
+      reader.onload =
+        (e) => {
+
+          logoBase64 =
+            e.target.result;
+
+          logoPreview.src =
+            logoBase64;
+
+          logoPreview.style.display =
+            'block';
+
+          logoPlus.style.display =
+            'none';
+
+        };
+
+
+      reader.readAsDataURL(file);
+
+    }
+  );
+
+
+
+  /* =========================================================
+     GOOGLE SCRIPT WARNING
+  ========================================================= */
+
   if(SCRIPT_URL){
-    document.getElementById('configWarning').style.display = 'none';
+
+    document
+      .getElementById('configWarning')
+      .style.display = 'none';
+
   }
 
-  /* ---------- Submit ---------- */
-  const form = document.getElementById('regForm');
-  const submitBtn = document.getElementById('submitBtn');
-  const statusMsg = document.getElementById('statusMsg');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    statusMsg.textContent = '';
-    statusMsg.className = 'status-msg';
 
-    if(!logoBase64){
-      statusMsg.textContent = 'ກະລຸນາອັບໂຫລດໂລໂກ້ທີມ';
-      statusMsg.classList.add('err');
-      return;
-    }
+  /* =========================================================
+     SUBMIT FORM
+  ========================================================= */
 
-    const teamName = document.getElementById('teamName').value.trim();
-    if(!teamName){
-      statusMsg.textContent = 'ກະລຸນາໃສ່ຊື່ທີມ';
-      statusMsg.classList.add('err');
-      return;
-    }
+  const form =
+    document.getElementById('regForm');
 
-    const members = Array.from(membersWrap.querySelectorAll('.member-card')).map((card, idx) => ({
-      order: idx + 1,
-      name: card.querySelector('.m-name').value.trim(),
-      phone: card.querySelector('.m-phone').value.trim(),
-      position: card.querySelector('.m-position').value,
-      details: card.querySelector('.m-details').value.trim(),
-    }));
+  const submitBtn =
+    document.getElementById('submitBtn');
 
-    for(const m of members){
-      if(!m.name || !m.phone){
-        statusMsg.textContent = `ກະລຸນາຕື່ມຂໍ້ມູນສະມາຊິກຄົນທີ ${m.order} ໃຫ້ຄົບ (ຊື່ ແລະ ເບີໂທ)`;
+  const statusMsg =
+    document.getElementById('statusMsg');
+
+
+  form.addEventListener(
+    'submit',
+    async (e) => {
+
+      e.preventDefault();
+
+
+      /* Reset status */
+
+      statusMsg.textContent = '';
+
+      statusMsg.className =
+        'status-msg';
+
+
+      /* Check logo */
+
+      if(!logoBase64){
+
+        statusMsg.textContent =
+          'ກະລຸນາອັບໂຫລດໂລໂກ້ທີມ';
+
         statusMsg.classList.add('err');
+
         return;
+
       }
+
+
+      /* Check team name */
+
+      const teamName =
+        document
+          .getElementById('teamName')
+          .value
+          .trim();
+
+
+      if(!teamName){
+
+        statusMsg.textContent =
+          'ກະລຸນາໃສ່ຊື່ທີມ';
+
+        statusMsg.classList.add('err');
+
+        return;
+
+      }
+
+
+      /* Collect members */
+
+      const members =
+        Array.from(
+          membersWrap.querySelectorAll('.member-card')
+        ).map(
+          (card, idx) => ({
+
+            order:
+              idx + 1,
+
+            name:
+              card
+                .querySelector('.m-name')
+                .value
+                .trim(),
+
+            phone:
+              card
+                .querySelector('.m-phone')
+                .value
+                .trim(),
+
+            position:
+              card
+                .querySelector('.m-position')
+                .value,
+
+            details:
+              card
+                .querySelector('.m-details')
+                .value
+                .trim()
+
+          })
+        );
+
+
+      /* Validate members */
+
+      for(const m of members){
+
+        if(!m.name || !m.phone){
+
+          statusMsg.textContent =
+            `ກະລຸນາຕື່ມຂໍ້ມູນສະມາຊິກຄົນທີ ${m.order} ໃຫ້ຄົບ`;
+
+          statusMsg.classList.add('err');
+
+          return;
+
+        }
+
+      }
+
+
+      /* =====================================================
+         DATA TO GOOGLE SHEET
+      ===================================================== */
+
+      const payload = {
+
+        timestamp:
+          new Date().toISOString(),
+
+        teamName,
+
+        memberCount:
+          members.length,
+
+        members,
+
+        logoBase64,
+
+        logoMime
+
+      };
+
+
+      /* =====================================================
+         DEMO MODE
+         ຖ້າຍັງບໍ່ໃສ່ SCRIPT_URL
+      ===================================================== */
+
+      if(!SCRIPT_URL){
+
+        statusMsg.textContent =
+          'ຍັງບໍ່ໄດ້ຕັ້ງຄ່າ SCRIPT_URL';
+
+        statusMsg.classList.add('err');
+
+        console.log(
+          'Payload (demo, not sent):',
+          payload
+        );
+
+        return;
+
+      }
+
+
+      /* Disable button */
+
+      submitBtn.disabled =
+        true;
+
+      submitBtn.textContent =
+        'ກຳລັງສົ່ງ...';
+
+
+      /* =====================================================
+         SEND DATA TO GOOGLE APPS SCRIPT
+      ===================================================== */
+
+      try{
+
+        await fetch(
+          SCRIPT_URL,
+          {
+
+            method:'POST',
+
+            headers:{
+              'Content-Type':
+                'text/plain;charset=utf-8'
+            },
+
+            body:
+              JSON.stringify(payload)
+
+          }
+        );
+
+
+        /* Show success */
+
+        document
+          .getElementById('formPanel')
+          .style.display = 'none';
+
+
+        document
+          .getElementById('successPanel')
+          .classList.add('show');
+
+
+      }catch(err){
+
+        /* Error */
+
+        statusMsg.textContent =
+          'ສົ່ງບໍ່ສຳເລັດ: ' +
+          err.message;
+
+        statusMsg.classList.add('err');
+
+
+        submitBtn.disabled =
+          false;
+
+        submitBtn.textContent =
+          'ສົ່ງລົງທະບຽນ';
+
+      }
+
     }
+  );
 
-    const payload = {
-      timestamp: new Date().toISOString(),
-      teamName,
-      memberCount: members.length,
-      members,
-      logoBase64,
-      logoMime,
-    };
-
-    if(!SCRIPT_URL){
-      statusMsg.textContent = 'ຍັງບໍ່ໄດ້ຕັ້ງຄ່າ SCRIPT_URL — ເບິ່ງຄຳເຕືອນຂ້າງເທິງ';
-      statusMsg.classList.add('err');
-      console.log('Payload (demo, not sent):', payload);
-      return;
-    }
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'ກຳລັງສົ່ງ...';
-
-    try{
-      await fetch(SCRIPT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // avoids CORS preflight
-        body: JSON.stringify(payload),
-      });
-      // Apps Script web apps typically don't return readable CORS response,
-      // so we optimistically show success after the request completes.
-      document.getElementById('formPanel').style.display = 'none';
-      document.getElementById('successPanel').classList.add('show');
-    }catch(err){
-      statusMsg.textContent = 'ສົ່ງບໍ່ສຳເລັດ, ກະລຸນາລອງໃໝ່ (' + err.message + ')';
-      statusMsg.classList.add('err');
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'ສົ່ງລົງທະບຽນ';
-    }
-  });
 </script>
 
 </body>
